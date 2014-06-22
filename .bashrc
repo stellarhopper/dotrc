@@ -240,6 +240,14 @@ build-tags() {
 	make ARCH=$arch tags
 }
 
+kh()
+{
+	opt=""
+	[ -n "$1" ] && opt="+$1"
+
+	vim ~/.ssh/known_hosts $opt
+}
+
 popcorn()
 {
 	LD_LIBRARY_PATH=/home/stellarhopper/popcorn-app/:$LD_LIBRARY_PATH ./build/releases/Popcorn-Time/linux64/Popcorn-Time/Popcorn-Time
